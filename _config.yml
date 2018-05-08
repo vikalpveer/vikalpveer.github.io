@@ -12,7 +12,7 @@ tagline:             'Treasure Notes'
 description:          'Sharing my knowledge notes'
 url: http://worldkosh.com
 baseurl: ""
-urlimg: https://lanyon-plus.sbamin.com/images/
+#urlimg: https://lanyon-plus.sbamin.com/images/
 ## If you do not have custom domain, comment top three lines, uncomment three lines below and replace dyndna with your github userid and lanyon-plus with your project name. Also, rename CNAME file to CNAME.sample
 #url: https://dyndna.github.io/lanyon-plus
 #baseurl: "/lanyon-plus"
