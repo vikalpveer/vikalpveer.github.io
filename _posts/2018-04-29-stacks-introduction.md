@@ -41,6 +41,20 @@ after this elemenets have already been removed from the stack.
 The method to insert an element into the stack is known as **PUSH** while the method to remove the element from the stack is known as **POP**. 
 In order to implement the stack, we need to expose atleast these two methods to let our client program access the stacks. A stack may also expose a method to allow client to access the top most element from the stack without removing it from the stack. We will call this method **getTop**. Additionally the stack also need to throw an error if *getTop* or *pop* method is called on an empty stack. We can also impose a limit on the size of the stack. Hence if a stack is full, a *Push* operation should throw an error.
 
+<div class="mermaid">
+   graph TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end 
+</div>
+
 With these design requirements, let's implement the stack. Following is the C++ implemenation.
 
 ### Code
@@ -118,4 +132,5 @@ Top Element is 8
 Stack is empty 
 
 {% endhighlight %}
+
 
