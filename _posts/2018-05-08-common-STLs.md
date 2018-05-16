@@ -85,6 +85,13 @@ Major difference between ordered and unordered map is that unordered map can giv
 2. **find** : find a given key in the map.
 3. **erase** : remove the given iterator position. Can also be used to erase a range. You can remove a given key as well.
 
+### Tuple
+This is a very important datastructure and can come handy in some algorithm solution which require you to save data in a structure like format. It is similar to **Pair** STL but provides flexibility to have more than two members.
+Common methods :
+
+1. **make_tuple** : to create a tuple.
+2. **get<index>** : to access a member at a given index from the tuple.
+
 ### Priority Queue
 Well implementing a priority queue itself can be an interview question, but what if a logic you are thinking for a given problem requires priority queue or (max/min heap) ? Ofcourse you can implement your own heap algorithm but when you are constraint for time, use Standard **Priority Queue** to solve the problem. You can let your interviewer know that you are using language provided heap to solve this problem and if asked by interviewer, implement it later.
 
