@@ -1,16 +1,11 @@
 ---
 layout: post
-title: From Source Code To Executable
----
-
----
-layout: post
-title: "Stages of Compilation - from source to exe""
+title: "Stages of Compilation - From Source Code to Executable""
 date: "2018-08-24"
 slug: "from-source-to-exe"
 description: "The four stages of Compilation - Pre-Processing, compilation, assembly and linker"
 category:
-  -Computer Science Fundamentals
+  - Computer Science Fundamentals
 # tags will also be used as html meta keywords.
 tags:
   - Computer Science
@@ -40,6 +35,7 @@ In this post, I try to dig into the steps involved when we write a program and e
 I will use C language along with GCC to learn these concepts. My intuition is that language is just a method of communication. The concepts I will explore is more or less valid for any programing language. So let's dive in.
 
 In general, a Compilation can involve up to four stages: preprocessing, compilation proper, assembly and linking, always in that order. Let's look at each of these stages:
+<!--more-->
 
 ### Hello World
 
