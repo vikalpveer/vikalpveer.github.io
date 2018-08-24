@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Stages of Compilation - From Source Code to Executable""
+title: "Stages of Compilation - From Source Code to Executable"
 date: "2018-08-24"
 slug: "from-source-to-exe"
 description: "The four stages of Compilation - Pre-Processing, compilation, assembly and linker"
