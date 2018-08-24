@@ -122,11 +122,13 @@ void main() {
  
 PreProcess the above program with -E option which will produce the following output :
 
-```
+{% highlight c %}
+
 void main() {
     int x = 10;
 }
-```
+{% endhighlight %}
+
 Note VAL is gone from the output file, and replaced with actual value. It is for this reason, macros are not always encouraged in scenarios like above because after preprocessing, you would never be able to debug your symbol VAL as it simply doesn't exist in the symbol table.
 
 ### Compilation
@@ -136,7 +138,8 @@ The pre-processed code is now compiled. By Compilation, it means translation of 
 Let's take a look of the output of the assembly code after we compile the simple code we wrote in previous section. You can stop after the compilation stage by giving command `gcc -S <file_name>` which will produce a file with `.s` extension. 
 Here is the assembly code of our little program:
 
-```
+{% highlight c %}
+
         .file   "1.c"
         .text
         .globl  main
@@ -159,13 +162,14 @@ main:
         .size   main, .-main
         .ident  "GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609"
         .section        .note.GNU-stack,"",@progbits
-```
+
+{% endhighlight %}
 The above output may ring some bells if you took assembly programming in your graduation or if you write assembly code at your work. 
 
 ### Assembly
 This is the third stage of the compilation process. The assembled code generated in the compilation stage is now used by the assembler to translate assembly instructions to object code which is the actual instructions to be run by the target processor. The output of this stage is known as object code. You can generate object code of your program by using option `-c` which will generate object file with `-o` extension. Object file is a binary file and can be read by using utiliies such as hexdump. Follwing is the snippet of the hexdump output of the object file of the above program.
 
-```
+{% highlight c %}
 
 hexdump 1.o 
 0000000 457f 464c 0102 0001 0000 0000 0000 0000
@@ -183,10 +187,12 @@ hexdump 1.o
 00000c0 0000 0000 0000 0000 0000 0000 0000 0000
 00000d0 0000 0000 0000 0000 0001 0000 0004 fff1
 
-```
+{% endhighlight %}
+
 Well the above output does not make any sense. However, you can extract all the information embedded within the object file using readelf utility. Object Files in Unix based systems follow ELF (Executable and Linking Format). The contents of the object file is grouped into areas called sections with each section holding exclusive information about your program. Let's dive into the decoded file of our object file. Simply use command `readelf -a <your object file>` . In case of my object file, I get the following output
 
-```
+{% highlight c %}
+
 readelf -a 1.o 
 ELF Header:
   Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
@@ -263,7 +269,8 @@ Symbol table '.symtab' contains 9 entries:
 
 No version information found in this file.
 
-```
+{% endhighlight %}
+
 You may be overwhelmed by the amout of information encodded within your object file, but on a high level it is very structured. For example every ELF format has a ELF header followed by Section header table. There are several sections such as .text (holds executable instruction codes), .bss (Block Started Symbol) holding un-initialized global and static variables, .data (contains initialized global and static variables). Additionay there is a Symbol Table which holds information needed to located program's symbolic definitions and references.
  Your program may consist of several of these object files. In order to make an executable for your program, you will need all of these object files to work together. This is where linking, our next stage in compilation comes in.
 
@@ -271,4 +278,4 @@ You may be overwhelmed by the amout of information encodded within your object f
 
 Linking is the final stage of the compilation where all different object files of your program are linked together - meaning all cross object function calls, variables are resolved so that your program can run as a single executable program.If any of your function calls or external variables are not resolved, complier will throw linker error at this stage. If this stage is successfull, the final output is called an executable file. In Linux, a gcc would produce a file `a.out` which can be executed to run your program.
 
-
+Thanks for reading. Do post your comments if you like/or don't like the post
