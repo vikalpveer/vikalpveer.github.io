@@ -41,15 +41,14 @@ In general, a Compilation can involve up to four stages: preprocessing, compilat
 
 Lets create a simple hello world program and we will extend it to understand each stage of compilation.
 
-```
-
+{% highlight c %}
 #include <stdio.h>
 void main() {
     int x = 10;
     printf("Value of x = %d \n",x);
 }
+{% endhighlight %}
 
-```
 The output of the above program is
  
 `Value of x = 10 `
@@ -58,7 +57,8 @@ The output of the above program is
 
 In the above program, we assigned a value 10 to the variable x. Next, we assign this value via a macro VAL. 
 
-```
+{% highlight c %}
+
 #include <stdio.h>
 /* Use a macro VAL which is a representation of 10 */
 #define VAL 10
@@ -66,7 +66,8 @@ void main() {
     int x = VAL;
     printf("Value of x = %d \n",x);
 }
-```
+{% endhighlight %}
+
 The output of the above program is
  
 `Value of x = 10 `
@@ -76,7 +77,8 @@ The output of the program is still same. However 10 is now assigned to X via a l
 For ex : 
 1.
 
-```
+{% highlight c %}
+
 #include <stdio.h>
 /* returns length of a array */
 #define ARRAY_LENGTH(A) (sizeof(A) / sizeof(A[0]))
@@ -90,18 +92,19 @@ int main(void)
     }
     return 0;
 }
-```
+{% endhighlight %}
 
 2.
 
 ` #define max(a,b) ((a)>(b)?(a):(b))`
 and then use the above macro to return max of any data type using
 
-```
+{% highlight c %}
 int max(int a, int b) {return a>b?a:b;}
 float max(float a, float b) {return a>b?a:b;}
 double max(double a, double b) {return a>b?a:b;}
-```
+{% endhighlight %}
+
 Even #include is also a macro which tells compiler to include the file before starting compilation. Hence, macros or "PreProcessor" are a group of directives which a comiler resolves before moving to the next stage. This is the first stage of compilation : pre-processing.
 
 ### Pre Processing
@@ -110,12 +113,12 @@ In this stage, compiler resolves all references to the pre-processor directives 
 Following is the sample program with it's pre-processed output
 
 
-```
+{% highlight c %}
 #define VAL 10
 void main() {
     int x = VAL;
 }
-```
+{% endhighlight %}
  
 PreProcess the above program with -E option which will produce the following output :
 
