@@ -9,7 +9,8 @@ category:
 # tags will also be used as html meta keywords.
 tags:
   - Algorithm
-  - Greedy, Array
+  - Greedy 
+  - Array
 show_meta: false
 comments: true
 mathjax: true
@@ -24,17 +25,16 @@ hide_printmsg: false
 summaryfeed: false
 ---
 
-**Problem :** Given an array of positive and negetive integers, find the subarray with the largest sum and return this sum in Linear Time.
+**Problem :** Given an array $$A[1..n]$$ of positive and negetive integers, find the subarray with the largest sum and return this sum in Linear Time.
 
 <!--more-->
+Mathematically we can formulate the problem to find $$i,j$$ such that $$\sum_{x=i}^{j}A[x]$$ is maximum. 
 
-Suppose our array only had positive integers. Then subarray with the largest integer is the whole array itself !
+Suppose our array only had positive integers. Then subarray with the largest sum is the whole array itself !
 
-However, because the problem statements states that the array can have $$+^{ve}$$ and $$-^{ve}$$ integers, we have to consider each possible subarrays, calculate its sum and bookeep the maxium sum. When all subarrays has been considered, return the maxium sum. This is a *naive* approach to solve this problem.
+However, because the problem statements states that the array can have $$+^{ve}$$ and $$-^{ve}$$ integers, we have to consider every possible subarrays, calculate its sum and book-keep the maximum sum. When all subarrays has been considered, return the maxiimum sum. This is a *naive* approach to solve this problem.
 
-The time complexity of this approach is $$\theta(n^{2})$$. Can we do better ?
-
-Indeed we can solve this problem in linear time complexity i.e $$\theta(n)$$ using a **Greedy Approach**
+We can solve this problem in linear time complexity i.e $$\theta(n)$$ using a **Greedy Approach**
 
 **Linear time approach**
 
@@ -55,7 +55,7 @@ Following is the python and c++ implementaion of the above logic.
 ### Python Implementation
 
 ```python
-def maxSubArray(nums):
+    def maxSubArray(nums):
         curr_sum = nums[0]
         max_sum = nums[0]
         
@@ -74,7 +74,7 @@ def maxSubArray(nums):
 ### C++ Implementation
 
 ```c++
-	int maxSubArray(vector<int> &nums) {
+    int maxSubArray(vector<int> &nums) {
         
         int max_sum = nums[0];
         int curr_sum = nums[0];
@@ -90,3 +90,4 @@ def maxSubArray(nums):
         return max_sum;
     }
 ```
+[further read](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
