@@ -84,7 +84,7 @@ In case of Selection Sort, number of comparison performed is **always** of the o
 
 To prove this point, I created 10 random lists of positive integers. The size of the list ranged from 1,000 to 100,000 in the steps of 10,000. I then ran the three algorithms on each of the 10 list and measured the time taken to sort the list with these three algorithms. The plot validated the above point
 
-![useful image](/assets/performance_of_sorting_algo.png)
+![Performance of Sorting Algo](/assets/performance_of_sorting_algo.png)
 
 We can see, bubble sort is the worst performer, followed by selection sort. Insertion sort is pretty fast when compared with these two algorithms.
 
